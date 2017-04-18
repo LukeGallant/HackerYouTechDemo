@@ -1,18 +1,32 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Grid, Col, Row } from 'react-bootstrap';
+
+import BeerPicker from './BeerPicker.js';
+
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <Grid>
+        <Row>
+          <Col xs={12} md={12}>
+          <div className="App-header">
+            <h1>Beau's All-Natural Brewing</h1>
+            <h2>Seasonal Beer Finder</h2>
+          </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12} md={12}>
+            <p className="App-intro">
+              In partnership with the LCBO, Beau's All Natural Brewing has an exciting new way to connect you with our beer! Our numerous seasonal offerings can be viewed and tracked to the closest LCBO.
+            </p>
+          </Col>
+        </Row>
+        <BeerPicker />
+        </Grid>
       </div>
     );
   }
