@@ -5,26 +5,40 @@
 
 
 .App-header {
-  background-color: #522c1b;
-  height: 150px;
+  background-color:#522c1B;
+  border-radius:10px;
+  border: 3px solid #95babb;
   padding: 20px;
   color: white;
-  font-family: 'Abril Fatface', serif;
+  font-family: 'Abril Fatface', cursive;
+  letter-spacing: 2px;
 }
-h2{
-  font-family: 'Abril Fatface', serif;
+.heading{
+  font-family: 'Abril Fatface', cursive;
+  letter-spacing:2px;
 }
 
 .App-intro {
   font-size: large;
+  padding:10px;
+  margin-top:10px;
+  background-color:white;
+  border: 5px solid #95babb;
+  border-radius:10px;
 }
 .beerListPicker{
   font-weight: bold;
-
+  border: 3px solid #95babb;
 }
 .beerListItem{
-   background-color:#f5dfbe;
+   background-color:#C4a077;
   color:#522c1B;
+}
+.beerViewPane{
+  padding:10px;
+  background-color: white;
+  border: 3px solid #95babb;
+  border-radius: 10px;
 }
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

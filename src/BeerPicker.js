@@ -30,16 +30,18 @@ class BeerPicker extends Component{
 			.then(res =>{
 				console.log(res);
 				this.setState({
-					beers: res.data.result
+					beers: res.data.result,
+					currentBeer: res.data.result[0]
 				})
 			})
+			
 	}
 
 	render(){
 		return(
-			<Row>
+			<Row className="Body">
 			<Col xs={12} md={4}>
-				<h2>Choose a Beer</h2>
+				<h2 className="heading">Choose a Beer</h2>
 				<ListGroup className="beerListPicker">
 				{this.state.beers.map(function(beer){
 					return(
@@ -49,6 +51,7 @@ class BeerPicker extends Component{
 				</ListGroup>
 			</Col>
 			<Col xs={12} md={8}>
+				<h2 className="heading">Beer Information</h2>
 				<ViewPane name={this.state.currentBeer.name} image={this.state.currentBeer.image_url}
 						  price={this.state.currentBeer.price_in_cents} volume={this.state.currentBeer.package}
 						  alcohol={this.state.currentBeer.alcohol_content} style={this.state.currentBeer.varietal}
