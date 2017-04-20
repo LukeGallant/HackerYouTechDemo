@@ -5,11 +5,11 @@
 
 
 .App-header {
-  background-color:#522c1B;
+  background-color:#f5dfbe;
   border-radius:10px;
   border: 3px solid #95babb;
   padding: 20px;
-  color: white;
+  color: #522c1B;
   font-family: 'Abril Fatface', cursive;
   letter-spacing: 2px;
 }
@@ -31,7 +31,7 @@
   border: 3px solid #95babb;
 }
 .beerListItem{
-   background-color:#C4a077;
+   background-color:#f5dfbe;
   color:#522c1B;
 }
 .beerViewPane{
@@ -39,6 +39,10 @@
   background-color: white;
   border: 3px solid #95babb;
   border-radius: 10px;
+}
+.divider{
+  background-color:#522c1B;
+  height: 4px;
 }
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

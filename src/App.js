@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Col, Row } from 'react-bootstrap';
+import { Grid, Col, Row, Image } from 'react-bootstrap';
 
 import BeerPicker from './BeerPicker.js';
 
@@ -13,8 +13,8 @@ class App extends Component {
         <Row>
           <Col xs={12} md={12}>
           <div className="App-header">
-            <h1>Beau's All-Natural Brewing</h1>
-            <h2>Seasonal Beer Finder</h2>
+            <Image src="http://cdn.shopify.com/s/files/1/0255/0283/t/5/assets/logo.svg?6887" responsive className="center-block" />
+            <h1>Seasonal Beer Finder</h1>
           </div>
           </Col>
         </Row>
@@ -26,6 +26,7 @@ class App extends Component {
           </Col>
         </Row>
         <BeerPicker />
+        <hr className="divider"/>
         </Grid>
       </div>
     );
