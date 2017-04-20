@@ -25,7 +25,7 @@ export default class ViewPane extends Component{
 		 if (navigator.geolocation) {
        			 navigator.geolocation.getCurrentPosition(this.showPosition, this.showError);
     		} else { 
-        			console.log("Geolocation not supported by this browser")
+        			console.log("Geolocation not supported by this browser");
     			}
          
 		}
@@ -38,8 +38,8 @@ export default class ViewPane extends Component{
 				console.log(res);
 				this.setState({
 					stores: res.data.result
-				})
-				this.open()
+				});
+				this.open();
 			});
 
 	}
@@ -62,11 +62,11 @@ export default class ViewPane extends Component{
 	}
 	//Close the Modal
 	close(){
-		this.setState({showModal:false})
+		this.setState({showModal:false});
 	}
 	//Open the Modal
 	open(){
-		this.setState({showModal:true})
+		this.setState({showModal:true});
 	}
 
 
@@ -99,8 +99,7 @@ export default class ViewPane extends Component{
           				<Modal.Body>
            				 {
            				 	this.state.stores.map(function(store){
-           				 
-           				 	var storestring="https://www.google.com/maps?saddr={My+Location}&daddr="+store.address_line_1
+           				 	var storestring="https://www.google.com/maps?saddr={My+Location}&daddr="+store.address_line_1;
 							return(
 								<ListGroupItem  key={store.id}>{store.name} <a href={storestring} target="_blank" className="pull-right"><i className="fa fa-map-marker" aria-hidden="true"></i> Directions</a></ListGroupItem>
 								);
@@ -113,7 +112,9 @@ export default class ViewPane extends Component{
 
 				</Col>
 				<Col md={6}>
-					<Thumbnail src={this.props.image}alt="No image available"/>
+				{/*This is the image of the product, using a conditional ternary operator to check if there is an image available*/}
+					<Thumbnail src={(this.props.image == null)?"http://beaus.ca/wp-content/uploads/2014/12/logo.png":this.props.image} alt="No image available"/>
+				
 				</Col>
 			</Row>
 			</div>

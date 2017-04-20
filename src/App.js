@@ -27,6 +27,7 @@ class App extends Component {
         </Row>
         <BeerPicker />
         <hr className="divider"/>
+        <footer className="text-center">Sample App for HackerYou made by Luke Gallant</footer>
         </Grid>
       </div>
     );

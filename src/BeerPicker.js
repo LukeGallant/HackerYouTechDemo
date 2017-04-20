@@ -15,9 +15,8 @@ class BeerPicker extends Component{
 
 		this.state = {
 			beers : [],
-			currentBeer : [],
-			storeData: [],
-			lcboStoreList: []
+			currentBeer : []
+
 		};
 	}
 
