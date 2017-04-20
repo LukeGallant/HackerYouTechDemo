@@ -2,7 +2,12 @@ import React, {Component} from 'react';
 import {Row, Col, ListGroup, ListGroupItem} from 'react-bootstrap';
 import axios from 'axios';
 
+
 import ViewPane from './ViewPane.js'
+
+//CONSTANTS
+const APIKEY="access_key=MDpiNDg1ODZiYy0yNDY2LTExZTctODY5Ny1iMzNlNTU1YWY1YzY6eWhBOE8wQkVrNHh2Z0xHbFh2ZzRBNHlRR25BTTVpVlNVQ2RC"
+
 
 class BeerPicker extends Component{
 	constructor(props){
@@ -26,7 +31,7 @@ class BeerPicker extends Component{
 	}
 
 	componentDidMount(){
-		axios.get('http://lcboapi.com/products?access_key=MDpiNDg1ODZiYy0yNDY2LTExZTctODY5Ny1iMzNlNTU1YWY1YzY6eWhBOE8wQkVrNHh2Z0xHbFh2ZzRBNHlRR25BTTVpVlNVQ2RC&where=is_seasonal&q=beaus%27s+all&where_not=is_dead')
+		axios.get(`http://lcboapi.com/products?${APIKEY}&where=is_seasonal&q=beaus%27s+all&where_not=is_dead`)
 			.then(res =>{
 				console.log(res);
 				this.setState({
@@ -39,7 +44,7 @@ class BeerPicker extends Component{
 
 	render(){
 		return(
-			<Row className="Body">
+			<Row>
 			<Col xs={12} md={4}>
 				<h2 className="heading">Choose a Beer</h2>
 				<ListGroup className="beerListPicker">
@@ -51,11 +56,11 @@ class BeerPicker extends Component{
 				</ListGroup>
 			</Col>
 			<Col xs={12} md={8}>
-				<h2 className="heading">Beer Information</h2>
+				<h2 className="heading"><i className="fa fa-beer" aria-hidden="true"></i> Beer Information <i className="fa fa-beer" aria-hidden="true"></i></h2>
 				<ViewPane name={this.state.currentBeer.name} image={this.state.currentBeer.image_url}
 						  price={this.state.currentBeer.price_in_cents} volume={this.state.currentBeer.package}
 						  alcohol={this.state.currentBeer.alcohol_content} style={this.state.currentBeer.varietal}
-						  id={this.state.currentBeer.id} />
+						  id={this.state.currentBeer.id} tasteNotes={this.state.currentBeer.style} />
 			</Col>
 			</Row>
 
