@@ -1,6 +1,6 @@
 HackerYou Tech Demo
 
-Pull from Repo, access directory and run npm start
+Pull from Repo, access directory, run npm install, wait, run npm start
 
 Dependencies:
  "axios": "^0.16.1",
